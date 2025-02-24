@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Help with scoring</title>
+<link rel="stylesheet" href="./css/bridgeScoring.css">
+
+<!-- 
+ @author Doug Lawson  (dlb21060@gmail.com)
+ 
+ Copyright (C) 2023 Doug Lawson 
+ 
+ This file is part of Bridge Scoring (Simplified Chicago) (also known as BS(SC) ) 
+ 
+ Bridge Scoring (Simplified Chicago) is free software: you can redistribute it 
+ and/or modify it under the terms of the GNU General Public License 
+ as published by the Free Software Foundation, either version 3 of the License, 
+ or (at your option) any later version.
+ 
+ Bridge Scoring (Simplified Chicago) is distributed in the hope that it will
+ be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+  
+ See the GNU General Public License for more details. 
+ You should have received a copy of the 
+ GNU General Public License along with BSSC. 
+ If not, see <https://www.gnu.org/licenses/>.
+
+ -->
+
+</head>
+<body>
+<h2>Help Topics</h2>
+<a href="./StandardChicagoScoring.html">What is Standard Chicago Scoring?</a>  <br/>
+<a href="./SimplifiedScoring.html">What is Simplified Chicago Scoring?</a>  <br/>
+<br/>
+<hr/>
+<h1>Scoring Format for Manual Entry</h1>
+<br/>
+Scores may be entered manually, instead of using the drop-down menu options.
+
+<h2>The format for scoring is:</h2>
+<span class="helpSample">LEVEL DENOMINATION [optional double] PLAYER RESULT<br/>
+  -- OR --<br/>
+PASS</span><br/><br/>
+LEVEL is designated by 1,2,...7<br/>
+DESIGNATION is one of C, D, H, S, or N<br/> 
+DOUBLE may be blank, X (for a doubled contract) or XX (for a redoubled contract)<br/>
+PLAYER is N, E, S, or W<br/>
+RESULT is = for contracts made without overtricks, +{1-6} for contracts making overtricks, or -{1-13} for contracts going down<br/>
+<h3>Examples:</h3>
+<dl class="helpExamples">
+<dt class="whatHappened">The hand is passed out</dt>
+<dd class="notation">PASS</dd>
+<br/>
+<dt class="whatHappened">4 Hearts by South, making exactly</dt>
+<dd class="notation">4HS=</dd>
+<br/>
+<dt class="whatHappened">4 Spades by North, doubled, down one</dt>
+<dd class="notation">4SxN-1</dd>
+<br/>
+
+<dt class="whatHappened">1 No Trump by East, redoubled, making with one overtrick</dt>
+<dd class="notation">1NxxE+1</dd>
+<br/>
+
+<dt class="whatHappened">3 No Trump by West, making</dt>
+<dd class="notation">3 N W =</dd>
+<br/>
+</dl>
+
+<span class="whatHappened">Note that spaces between elements of the score are optional, and case is irrelevant. <br/>Thus,</span> 
+<span class="notation">4SxN-1</span> <span class="whatHappened">is equivalent to: </span> <span class="notation">4 s X n -1</span> 
+<br/><br/>
+<hr/>
+
+</body>
+</html>
+

@@ -1,0 +1,341 @@
+/**
+ * Stylesheet to Bridge Scoring (Simplified Chicago) aka BS(SC)
+  
+ * @author Doug Lawson  (dlb21060@gmail.com)
+ * 
+ * Copyright (C) 2023 Doug Lawson 
+ * 
+ * This file is part of Bridge Scoring (Simplified Chicago) (AKA BS(SC) ) 
+ * 
+ * Bridge Scoring (Simplified Chicago) is free software: you can redistribute it 
+ * and/or modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, 
+ * or (at your option) any later version.
+ * 
+ * Bridge Scoring (Simplified Chicago) is distributed in the hope that it will
+ * be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+ *  
+ * See the GNU General Public License for more details. 
+ * You should have received a copy of the 
+ * GNU General Public License along with BSSC. 
+ * If not, see <https://www.gnu.org/licenses/>.
+ * 
+ */ 
+
+
+h1 {
+    text-align: center; 
+} 
+#pageHL{ 
+	border: 2px dotted black; 
+}
+
+
+tr {outline:thin solid; 
+  /*  border-radius: 10px; */  
+}
+
+table td {
+	border-collapse: collapse;
+    border-top: thin solid; 
+    border-bottom: thin solid;
+    border-left: thin solid; 
+    border-right: thin solid; 
+    
+}
+
+th.colA { 
+	width: 10%; 
+}
+th.colB { 
+	width: 30%; 
+}
+th.colC { 
+	width: 30%; 
+}
+
+td.handScoreDesc { 
+	border: 1px solid black;
+	text-align: right;
+	padding-right: 3%;  
+	font-size: 150%;  
+	
+}
+
+td.handScore { 
+	font-size: 150%;
+	text-align: right;
+	padding-right: 3%;    
+	 
+}
+
+    .dropdown-row {
+      text-align: center; 
+	  margin-left: auto; 
+      margin-right: auto; 
+      gap: 10px; /* Space between dropdowns */
+    }
+    .button-row {
+      padding: 30px 0;        
+      text-align: center; 
+      margin: auto; 
+      gap: 20px; /* Space between buttons */
+    }
+    option.redsuit {
+      padding: 2px;
+      font-size: 20px;
+      color: red; 
+    }
+    select {
+      padding: 8px;
+      font-size: 20px;
+      border: 2px solid black;
+      border-radius: 8px;  
+    }
+    #handParms { 
+        margin-left: auto; 
+        margin-right: auto; 
+       padding: 8px; 
+       border: 2px solid black; 
+       border-radius: 16px; 
+       background-color: #eeeeff;  
+    }
+    #scoreButton { 
+      font-size: 24px; 
+      border-radius: 16px;
+      border: 3px solid black;  
+      background-color: #eeffee; /* very light green */ 
+    }
+    #removeButton { 
+      border-radius: 16px;
+      border: 2px double red;  
+	  font-size: 24px; 
+      background-color: #ffdddd; 
+    }
+
+/* span class="handNum"
+*/ 
+span.handNum {
+	  font-size: 150%; 
+	}
+	
+/* <span id="hNum">1 */ 	
+#hNum {
+	  font-size: 150%; 
+}
+
+
+/* <span id="NSNames">test-test</span> */ 
+#NSNames {
+	border: 1px dotted darkblue; 
+	border-radius: 10px; 
+	background-color: #dddddd;  
+	padding: 3px; 
+}
+#EWNames {
+	border: 1px dotted darkblue; 
+	border-radius: 10px; 
+	background-color: #dddddd;  
+	padding: 3px; 
+}
+
+td.passout { 
+	text-align: center; 
+}
+
+td.handNum { 
+	font-size: 125%;
+	text-align: center;   
+	
+}
+
+tr.handScore { 
+	max-height: 3em;
+	background-color: white;  
+}
+
+tr.summaryTotal { 
+	border-top-style: 3px solid blue;
+	background-color: #eeeeff;;  
+	padding-right: 3%;
+}
+/**
+<input type="text" id="contract" name="contract" >
+<button type="button" id="calcButton" >Calculate</button>
+<button type="button" id="resetPreviousButton" >Erase previous result</button>
+*/ 
+
+
+#contract { 
+	font-size: 150%; 
+	height: 2em;  
+	border-radius: 5px;  
+}
+#calcButton { 
+	font-size: 150%; 
+	height: 2em; 
+	border-radius: 5px;  
+}
+div.scoreT {
+  border: none; 
+  width: 90%; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+#settingsButton[disabled]{
+	background-color: #EEE; 
+	border: 2px dotted grey; 	
+}
+
+#resetPreviousButton[disabled] { 
+	font-size: 150%; 
+	background-color: #EEE; 
+	border: 2px dotted grey; 	
+}
+
+#resetPreviousButton { 
+	font-size: 150%; 
+	height: 2em;
+	border: 2px solid red; 
+	background-color: #ffeeee; 
+	border-radius: 3px;  
+	margin-top: 6px; 
+}
+
+#aboveLine {
+    
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    width: 90%; 
+    align: center; 
+    margin: 0 auto 0 auto; 
+}
+
+#PageDivider { 
+	border: 3PX solid black; 
+}
+
+#mainButton { 
+	font-size: 100%; 
+	height: 1.5em;
+	border: 2px solid black; 
+	border-radius: 10px;  
+	margin-top: 6px; 
+}
+#settingsButton { 
+	font-size: 100%; 
+	height: 1.5em;
+	border: 2px solid black; 
+	border-radius: 10px;  
+	margin-top: 6px; 
+}
+
+#errorMessage {
+	  margin-left: auto; 
+      margin-right: auto; 
+		font-size: 150%; 
+	color: darkred; 
+	background-color: white; 
+	border: 1px solid red; 
+	visibility: hidden; 
+}
+
+.scoreTableHeader { 
+	 width: 100%; 
+	 max-height: 20%; 
+    margin: 0 auto; 
+    font-size: 150%;
+    background-color: #eeeeff;  
+}
+
+.totalScore { 
+    font-size: 200%;
+    font-weight: bold; 
+    background-color: #eeeeff;  
+	text-align: right;   
+	padding-right: 3%; 
+	}
+.totaldesc { 
+    font-size: 200%;
+    background-color: #eeeeff;
+    text-align: right;     
+	padding-right: 3%; 
+}
+
+
+#above {
+    border-bottom: 3px solid black;
+    position: relative;
+    
+   
+}
+
+#below {
+
+    border-top: 3px solid black;
+    position: relative; 
+} 
+
+
+span.redText { 
+	color: red; 
+}
+span.redSuit { 
+	color: red; 
+}
+span.blackSuit { 
+	color: black; 
+}
+
+.notes {
+	margin-left: 5%; 
+	margin-right: 5%; 
+	font-size: 150%; 
+   text-align: left;
+   padding-left: 1em; 
+   background-color: #eedddd;  
+   border-radius: 8px; 
+   border: 1px solid black; 
+}
+
+.we-score {
+    align: right; 
+    border-right: 3px dotted black;
+    width: 50%;
+    background-color: lightblue; 
+} 
+
+.they-score {
+    align: left; 
+    width: 50%;
+    border-left: 3px dotted black;
+    background-color: lightgreen; 
+} 
+
+.helpExamples {
+   background-color: #F0F0F0;
+   width: 80%; 
+   border: 1PX dotted black;  	
+}
+
+.helpSample {
+	font-size: 125%; 
+	}
+
+.whatHappened {
+	font-size: 125%; 
+	font-style: italic; 
+	}
+
+.notation { 
+	font-size: 150%; 
+	font-weight: bold; 
+}
+#contractLabel{
+    font-size: 150%; 
+	font-weight: bold; 	
+}
+

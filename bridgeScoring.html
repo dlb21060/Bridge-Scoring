@@ -1,0 +1,203 @@
+
+<html>
+<head>
+<!-- 
+ @author Doug Lawson  (dlb21060@gmail.com)
+ 
+ Copyright (C) 2023 Doug Lawson 
+ 
+ This file is part of Bridge Scoring (Simplified Chicago) (also known as BS(SC) )  
+ 
+ Bridge Scoring (Simplified Chicago) is free software: you can redistribute it 
+ and/or modify it under the terms of the GNU General Public License 
+ as published by the Free Software Foundation, either version 3 of the License, 
+ or (at your option) any later version.
+ 
+ Bridge Scoring (Simplified Chicago) is distributed in the hope that it will
+ be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+  
+ See the GNU General Public License for more details. 
+ You should have received a copy of the 
+ GNU General Public License along with BSSC. 
+ If not, see <https://www.gnu.org/licenses/>.
+
+ -->
+
+<title>
+Chicago Bridge Scoring
+</title>
+<script src="./js/scoring.js"></script>
+<script src="./js/writeOutput.js"></script>
+<script src="./js/parser.js"></script>
+<script src="./js/constants.js"></script>
+
+<script>
+   
+</script>
+
+
+<link rel="stylesheet" href="./css/csBridgeScoring.css">
+
+
+</head>
+<body onload=init(); >
+  <h1 >Bridge Scoring (Chicago)</h1>
+  <br/>
+  
+  
+<div class="notes">
+<br/><a href="./help/helpScoring.html" target="ExplWindow">HELP (with samples)</a>&nbsp;&nbsp;&nbsp;
+<br/>
+</div>
+<br/>
+  
+  
+<form name="handParms" id="handParms" style="width:90%">
+  <span class="handNum">Hand Number:</span> <span id="hNum">1</span>
+  <br/><br/>
+  <div class="dropdown-row">
+    <!-- label for="bidlevel">Bid Level:</label>   -->
+    <select name="bidlevel" id="bidlevel">
+     <optgroup label="BID LEVEL">
+      <option value="0">Passed Out</option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      </optgroup>
+    </select>
+    
+    <select name="suit" id="suit" disabled>
+      <option value="C">&clubs; CLUBS</option>
+      <option class="redsuit" value="D">&diams; DIAMONDS</option>
+      <option class="redsuit" value="H">&hearts; HEARTS</option>
+      <option value="S">&spades; SPADES</option>
+      <option value="N">No Trump</option>
+    </select>
+    
+    <select name="player" id="player" disabled>
+      <option value="N">North</option>
+      <option value="S">South</option>
+      <option value="E">East</option>
+      <option value="W">West</option>
+    </select>
+    
+    <select name="dbl" id="dbl" disabled>
+      <option value="0" SELECTED>(not doubled)</option>
+      <option value="X">Doubled</option>
+      <option value="XX">Redoubled</option>
+    </select>
+
+
+    <select name="result" id="result" disabled>
+      <option value="-13">DOWN 13</option>
+      <option value="-12">DOWN 12</option>
+      <option value="-11">DOWN 11</option>
+      <option value="-10">DOWN 10</option>
+      <option value="-9">DOWN 9</option>
+      <option value="-8">DOWN 8</option>
+      <option value="-7">DOWN 7</option>
+      <option value="-6">DOWN 6</option>
+      <option value="-5">DOWN 5</option>
+      <option value="-4">DOWN 4</option>
+      <option value="-3">DOWN 3</option>
+      <option value="-2">DOWN 2</option>
+      <option value="-1">DOWN 1</option>
+      
+      <option value="=" SELECTED>Made</option>
+      <option value="+1">Plus 1</option>
+      <option value="+2">Plus 2</option>
+      <option value="+3">Plus 3</option>
+      <option value="+4">Plus 4</option>
+      <option value="+5">Plus 5</option>
+      <option value="+6">Plus 6</option>
+    </select>
+      
+    <select name="honors" id="honors" disabled>
+      <option value="0" SELECTED>No Honors</option>
+      <option value="100">100 Honors</option>
+      <option value="150">150 Honors</option>
+      <option value="-100">100 Honors (defense)</option>
+      <option value="-150">150 Honors (defense)</option>
+    </select>
+</div>
+
+   <div class="button-row">        
+    <button type="button" name="scoreButton" value="button" id="scoreButton" >Score this hand</button>
+    <!--  <button type="button" name="removeButton" value="button" id="removeButton" > Remove Previous Hand</button>
+     -->
+</div>
+
+
+<div class="ctrct">
+
+<label for="contract" id="contractLabel">Contract/Result:</label>
+<input type="text" id="contract" name="contract" >
+<button type="button" id="calcButton" >Calculate</button>
+<button type="button" id="resetPreviousButton" >Erase previous result</button>
+<!--  <button type="button" id="settingsButton" DISABLED >Settings</button>  -->
+&nbsp;&nbsp;&nbsp;
+<span id="errorMessage">Please enter a valid result: </span>
+</div>
+
+</div>
+
+
+</form>
+
+
+<table id="aboveLine">
+  <tbody id="scorebody">
+  <tr class="scoreTableHeader">
+  <th class="colA">&nbsp;</th>
+  <th class="colB">Contract</th>
+  <th class="colC">N-S<br/><span id="NSNames">test-test</span></th>
+  <th class="colD">E-W<br/><span id="EWNames">testE-testW</span></th>
+  </tr>
+  
+   <tr class="handScore">
+  <td class="handNum">hand #1<br/>dlr: N<br/>vul: none </td>
+  <td class="handScoreDesc">&nbsp;</td>
+  <td class="handScore">&nbsp;</td>
+  <td class="handScore"></td>
+  </tr>
+
+  <tr class="handScore">
+  <td class="handNum">hand #2<br/>dlr: E<br/>vul: EW </td>
+  <td class="handScoreDesc"></td>
+  <td class="handScore">&nbsp;</td>
+  <td class="handScore"></td>
+  </tr>
+ 
+   <tr class="handScore">
+  <td class="handNum">hand #3<br/>dlr: S<br/>vul: NS</td>
+  <td class="handScoreDesc">&nbsp;</td>
+  <td class="handScore">&nbsp;</td>
+  <td class="handScore">&nbsp;</td>
+  </tr>
+  
+   <tr class="handScore">
+  <td class="handNum">hand #4<br/>dlr: W<br/>vul: ALL </td>
+  <td class="handScoreDesc"></td>
+  <td class="handScore">&nbsp;</td>
+  <td class="handScore">&nbsp;</td>
+  </tr>
+  
+   <tr class="summaryTotal">
+   <td class="TotalDesc">Total</td>
+   
+  <td class="TotalDesc"></td>
+  <td class="TotalScore">0</td>
+  <td class="TotalScore">0</td>
+  </tr>
+  
+  </tbody>
+</table>
+
+</body>
+</html>
+
